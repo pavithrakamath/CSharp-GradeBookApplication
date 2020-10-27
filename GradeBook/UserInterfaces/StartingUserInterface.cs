@@ -40,9 +40,11 @@ namespace GradeBook.UserInterfaces
                 return;
             }
             var name = parts[1];
+            var type = parts[2];
             BaseGradeBook gradeBook;
             Enums.GradeBookType userType;
-            bool isParsed = Enum.TryParse(parts[2], true, out userType);
+            
+            bool isParsed = Enum.TryParse(type, true, out userType);
             if (isParsed)
             {
                 switch (userType)
@@ -57,7 +59,8 @@ namespace GradeBook.UserInterfaces
                         Console.WriteLine("Created gradebook {0}.", name);
                         GradeBookUserInterface.CommandLoop(gradeBook);
                         break;
-                    default: Console.WriteLine($"{parts[2]} is not a supported type of gradebook, please try again");
+                    default:
+                        Console.WriteLine("{0} is not a supported type of gradebook, please try again", type);
                         break;
                 }                
             }
