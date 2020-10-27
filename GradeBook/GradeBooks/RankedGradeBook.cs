@@ -7,9 +7,9 @@ namespace GradeBook.GradeBooks
 {
     public class RankedGradeBook:BaseGradeBook
     {
-        public RankedGradeBook(string name) : base(name)
+        public RankedGradeBook(string name, bool isWeighted) : base(name, isWeighted)
         {
-            Type = Enums.GradeBookType.Ranked;
+            Type = Enums.GradeBookType.Ranked;            
         }
         public override char GetLetterGrade(double averageGrade)
         {
