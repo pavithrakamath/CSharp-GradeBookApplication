@@ -42,18 +42,18 @@ namespace GradeBook.UserInterfaces
             var name = parts[1];
             BaseGradeBook gradeBook;
             Enums.GradeBookType userType;
-            bool isParsed = Enum.TryParse(parts[2], out userType);
+            bool isParsed = Enum.TryParse(parts[2], true, out userType);
             if (isParsed)
             {
                 switch (userType)
-                {
-                    case Enums.GradeBookType.Ranked:
-                        gradeBook = new RankedGradeBook(name);
+                {                  
+                    case Enums.GradeBookType.Standard:
+                        gradeBook = new StandardGradeBook(name);
                         Console.WriteLine("Created gradebook {0}.", name);
                         GradeBookUserInterface.CommandLoop(gradeBook);
                         break;
-                    case Enums.GradeBookType.Standard:
-                        gradeBook = new StandardGradeBook(name);
+                    case Enums.GradeBookType.Ranked:
+                        gradeBook = new RankedGradeBook(name);
                         Console.WriteLine("Created gradebook {0}.", name);
                         GradeBookUserInterface.CommandLoop(gradeBook);
                         break;
