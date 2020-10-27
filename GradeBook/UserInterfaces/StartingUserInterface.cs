@@ -57,7 +57,7 @@ namespace GradeBook.UserInterfaces
                         Console.WriteLine("Created gradebook {0}.", name);
                         GradeBookUserInterface.CommandLoop(gradeBook);
                         break;
-                    default: Console.WriteLine($"{parts[1]} is not a supported type of gradebook, please try again");
+                    default: Console.WriteLine($"{parts[2]} is not a supported type of gradebook, please try again");
                         break;
                 }                
             }
